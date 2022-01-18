@@ -1,0 +1,11 @@
+{
+  "name": "newtab",
+  "version": "1.0.0",
+  "description": "Fast and clean new tab page extension.",
+  "main": "src/index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elio Zhou",
+  "license": "ISC"
+}

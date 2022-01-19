@@ -1,0 +1,108 @@
+.quicklink-adder {
+  user-select: none;
+
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    z-index: 3;
+  }
+
+  .popup-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 14px 18px;
+    border-radius: 5px;
+    display: grid;
+    z-index: 4;
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      .header-title {
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .icon-btn {
+        height: 24px;
+        width: 24px;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: #eaeaea;
+        }
+
+        svg {
+          height: 12px;
+          width: 12px;
+          color: #3f3f3f;
+        }
+      }
+    }
+
+    .body {
+      display: grid;
+      gap: 12px;
+
+      .input-container {
+        box-sizing: border-box;
+
+        p {
+          line-height: 32px;
+        }
+
+        input {
+          box-sizing: border-box;
+          background-color: #f7f7f7;
+          height: 32px;
+          font-size: 14px;
+          width: 364px;
+          border-radius: 2px;
+          outline: none;
+          padding-left: 10px;
+          border: 1px solid #b6b6b6;
+
+          &:focus {
+            border: 1px solid #3f3f3f;
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 140px 140px;
+      gap: 8px;
+      margin-top: 24px;
+      justify-content: center;
+
+      button {
+        border-radius: 2px;
+        height: 32px;
+        width: 140px;
+        background-color: #e5e5e5;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 400;
+
+        &:hover {
+          background-color: #dddddd;
+        }
+      }
+    }
+  }
+}

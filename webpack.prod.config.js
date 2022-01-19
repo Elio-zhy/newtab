@@ -3,13 +3,20 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "production",
-    entry: [
-        "@babel/polyfill",
-        path.resolve(__dirname, "src/index.jsx")
-    ],
+    entry: {
+        polyfill: {
+            import: "@babel/polyfill",
+            dependOn: "shared",
+        },
+        index: {
+            import: "./src/index.jsx",
+            dependOn: "shared",
+        },
+        shared: "lodash"
+    },
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
         publicPath: '/',
     },
     devServer: {
@@ -55,5 +62,8 @@ module.exports = {
     ],
     resolve: {
         extensions: [".js", ".jsx", ".wasm"]
-    }
+    },
+    optimization: {
+        runtimeChunk: "single"
+    },
 };
